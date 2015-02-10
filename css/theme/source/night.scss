@@ -1,0 +1,132 @@
+/**
+ * Black theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(http://fonts.googleapis.com/css?family=Quicksand:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #1B2432;
+
+$green: #235D23;
+$light-green: #C6D5B0;
+$yellow: #DFFF6D;
+$maroon: #32382C;
+
+$mainFont: 'Open Sans', sans-serif;
+$linkColor: #e7ad52;
+$linkColorHover: lighten( $linkColor, 20% );
+$headingFont: 'Quicksand', serif;
+$headingTextShadow: none;
+$headingLetterSpacing: -0.03em;
+$headingTextTransform: none;
+$selectionBackgroundColor: #e7ad52;
+$mainFontSize: 30px;
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+.reveal {
+
+	.dark {
+		h1, h2, h3, p {
+			color: $backgroundColor;
+		}
+	}
+
+	pre {
+		font-size: 1.5em;
+		padding: 1em;
+	}
+
+	.codeflex {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.fifty {
+		flex-grow: 1;
+		margin: 32px 16px;
+		&:first-of-type {
+			margin-left: 0;
+		}
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+	img {
+		border: none;
+	}
+	h1 {
+		font-size: 72px;
+		line-height: 1.1;
+		letter-spacing: -3px;
+		text-transform: uppercase;
+	}
+	h1, h2, h3, h4, h5 {
+		text-transform: uppercase;
+		letter-spacing: -3px;
+		line-height: 1.1;
+	}
+}
+
+.perfect-centering {
+	display: flex;
+	align-items: center;
+	height: 400px;
+	width: 100%;
+	background: $green;
+	span {
+		margin: auto;
+	}
+}
+
+.flex {
+	background: $backgroundColor;
+	padding: 8px;
+	height: 80px;
+}
+
+[class*='flex--'] {
+	display: flex;
+}
+
+.flex span {
+	display: block;
+	background: $yellow;
+	height: 100%;
+	transition: flex-grow 100ms ease-in-out;
+	&:first-of-type {
+		background: $maroon;
+	}
+	&:nth-child(3) {
+		background: $light-green;
+	}
+}
+
+.editable-code, code > pre {
+	display: block;
+	background: #333;
+	padding: 0 40px;
+	white-space: pre;
+	text-align: left;
+	overflow: auto;
+	max-height: 500px;
+}
+
+.two.child-four {
+	background: #32382C;
+}
