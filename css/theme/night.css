@@ -135,9 +135,11 @@ body {
 
 .reveal .dark h1, .reveal .dark h2, .reveal .dark h3, .reveal .dark p {
   color: #1B2432; }
-.reveal pre {
-  font-size: 1.5em;
-  padding: 1em; }
+.reveal pre code {
+  font-size: 2em;
+  line-height: 1.2;
+  padding: 1em;
+  padding-top: 0; }
 .reveal .codeflex {
   display: flex;
   flex-direction: row; }
@@ -160,6 +162,22 @@ body {
   letter-spacing: -3px;
   line-height: 1.1; }
 
+.twitter_star {
+  width: 65px;
+  height: 50px;
+  background: url(../../img/twitter_fave.png) no-repeat scroll 0px 2px #FFF;
+  animation: fave 2s steps(55, end) infinite; }
+
+@-webkit-keyframes fave {
+  0% {
+    background-position: 0 2px; }
+  50% {
+    background-position: -3519px 2px; } }
+@keyframes fave {
+  0% {
+    background-position: 0 2px; }
+  50% {
+    background-position: -3519px 2px; } }
 .perfect-centering {
   display: flex;
   align-items: center;
@@ -186,15 +204,6 @@ body {
     background: #32382C; }
   .flex span:nth-child(3) {
     background: #C6D5B0; }
-
-.editable-code, code > pre {
-  display: block;
-  background: #333;
-  padding: 0 40px;
-  white-space: pre;
-  text-align: left;
-  overflow: auto;
-  max-height: 500px; }
 
 .two.child-four {
   background: #32382C; }
