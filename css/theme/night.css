@@ -164,6 +164,8 @@ body {
 .reveal .small-head {
   display: block;
   font-size: 0.5em; }
+.reveal .small-code {
+  font-size: 0.4em; }
 .reveal .scrooge h1, .reveal .scrooge h2, .reveal .scrooge h3, .reveal .scrooge p {
   margin-top: 350px;
   color: #222; }

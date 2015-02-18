@@ -47,14 +47,16 @@
 						<h1>Overcoming the Great Animation Divide</h1>
 					</section>
 				</section>
-				<section>
 
+
+				<section>
 					<section data-background="img/willie.gif">
 						<h2>Animation is important</h2>
 					</section>
 
 					<section>
 						<h2><span class="small-head">Good animation</span> conveys meaning</h2>
+						<p class="fragment">frees users from thinking about states</p>
 						<img src="img/form.gif"/>
 					</section>
 
@@ -87,12 +89,15 @@
 					</section>
 				</section>
 
-				<section>
+
+				<section data-background-color="#1C1209">
 					<section data-background="img/scrooge.gif" class="scrooge">
 						<h1>Animation is hard</h1>
 					</section>
 					<section>
 						<h2>WAAPI is coming!</h2>
+						<p class="fragment fade-out" data-fragment-index="0">The greatest API OF ALL TIME!</p>
+						<p class="fragment fade-in" data-fragment-index="0">...a great API</p>
 						<pre><code class="hljs javascript">
 var moveTopAnimation = new Animation(el,
 [
@@ -115,27 +120,88 @@ var moveTopAnimation = new Animation(el,
 					<section data-background="img/catcoon.jpg" data-background-size="contain" data-background-color="#1C1209"></section>
 				</section>
 
+
+
 				<section>
-					<section>
+					<section data-background="img/flip.jpg">
 						<h1>FLIP your animations</h1>
 						<p><span class="fragment">First,</span> <span class="fragment">last,</span> <span class="fragment">inverse,</span> <span class="fragment">play.</span></p>
 					</section>
 
 					<section>
+						<h3>The world’s smallest example™</h3>
+						<pre class="half-code"><code>
+.thing {
+  width: 500px;
+  translate: transform 100ms ease-out;
+}
+.thing:hover {
+  transform: scale(1.2);
+}
+						</code></pre>
+						<p class="fragment">This is BAD</p>
+					</section>
+
+					<section>
+						<h3>The world’s smallest good example</h3>
+						<pre class="half-code"><code>
+.thing {
+  width: 625px;
+  transform: scale(0.8);
+  translate: transform 100ms ease-out;
+}
+.thing:hover {
+  transform: scale(1);
+}
+						</code></pre>
 
 					</section>
 
 					<section>
-						<h1>CSS <code>will-change</code></h1>
+						<h2>This is super simplified!</h2>
+						<p>In this example it wouldn't really make a difference</p>
+					</section>
+
+					<section>
+						<pre class="javascript small-code"><code>
+var first = el.getBoundingClientRect();
+el.classList.add('totes-at-the-end');
+var last = el.getBoundingClientRect();
+
+var invert = first.top - last.top;
+el.style.transform = 'translateY(' + invert + 'px)';
+
+requestAnimationFrame(function() {
+  el.classList.add('animate-on-transforms');
+  // GO GO GOOOOOO!
+  el.style.transform = '';
+});
+
+el.addEventListener('transitionend', tidyUpAnimations);
+						</code></pre>
 					</section>
 				</section>
+
+
+
+				<section data-background-color="#013050">
+					<h3>In summary:</h3>
+					<p class="fragment">Animation is important</p>
+					<p class="fragment">Don't be a lazy ginger</p>
+					<p class="fragment">Use FLIP principles</p>
+					<p class="fragment">Sit on your pile of gold</p>
+					<img class="fragment" src="img/scrooge2.gif"/>
+				</section>
+
+
 
 				<section data-background="img/dark-trees.jpg">
 
 					<section>
 						<h1>Thanks!</h1>
 						<h3>Timothy Miller</h3>
-						<p>ForADesigner.com/presentations</p>
+						<p><a href="http://twitter.com/tjacobdesign">@tjacobdesign</a></p>
+						<p><a href="http://foradesigner.com/presentations">ForADesigner.com/presentations</a></p>
 					</section>
 
 				</section>
